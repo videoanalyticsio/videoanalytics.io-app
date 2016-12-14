@@ -5,17 +5,14 @@
   "scripts": {
     "start": "node server"
   },
-  "author": {
-    "name": "Eddy Hernandez",
-    "email": "eddy@mailgun.com",
-    "url": "http://www.mailgun.com"
-  },
+  "author": "Adam Stankiewicz",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mailgun/node-prelaunch.git"
+    "url": "https://github.com/videoanalyticsio/videoanalytics.io-app.git"
   },
+  "homepage": "https://github.com/videoanalyticsio/videoanalytics.io-app#readme",
   "bugs": {
-    "url": "https://github.com/mailgun/node-prelaunch/issues"
+    "url": "https://github.com/videoanalyticsio/videoanalytics.io-app/issues"
   },
   "license": "MIT",
   "dependencies": {
