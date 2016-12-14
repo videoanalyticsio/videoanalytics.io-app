@@ -1,0 +1,46 @@
+{
+  "name": "node-prelaunch",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": {
+    "name": "Eddy Hernandez",
+    "email": "eddy@mailgun.com",
+    "url": "http://www.mailgun.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mailgun/node-prelaunch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mailgun/node-prelaunch/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "async": "*",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.10.2",
+    "bootstrap": "^3.3.7",
+    "cookie-parser": "~1.3.3",
+    "debug": "~2.1.1",
+    "dotenv": "^2.0.0",
+    "email-templates": "^2.0.0-beta",
+    "express": "~4.11.1",
+    "express-validator": "^2.10.0",
+    "lodash": "^3.8.0",
+    "mailgun-validate-email": "^2.0.1",
+    "mongoose": "^4.0.2",
+    "mongoose-timestamp": "^0.3.0",
+    "morgan": "~1.5.1",
+    "nodemailer": "^1.3.4",
+    "nodemailer-mailgun-transport": "1.0.0",
+    "serve-favicon": "~2.2.0",
+    "shortid": "^2.2.2",
+    "swig": "^1.4.2"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}

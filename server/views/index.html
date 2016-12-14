@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/images/favicon.ico">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+
+  <body ng-controller="MainCtrl" ng-cloak>
+
+    <div class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">videoanalytics.io</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="/">Home</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="page-header">
+        <div class="row">
+          <div class="col-lg-6 col-lg-offset-3">
+            <h1>videoanalytics.io</h1>
+            <ul class="icons">
+              <li>
+                <a href="https://www.npmjs.com/package/videoanalytics.io" target="_blank"><img src="https://img.shields.io/npm/dt/videoanalytics.io.svg"></a>
+              </li>
+              <li>
+                <a href="http://slack.videoanalytics.io" target="_blank"><img src="http://slack.videoanalytics.io/badge.svg"></a>
+              </li>
+              <li>
+                <a href="https://github.com/videoanalyticsio/videoanalytics.io" target="_blank"><img src="https://img.shields.io/github/stars/videoanalyticsio/videoanalytics.io.svg?style=social&label=Star"></a>
+              </li>
+              <li>
+                <a href="https://github.com/videoanalyticsio/videoanalytics.io/subscription" target="_blank"><img src="https://img.shields.io/github/watchers/videoanalyticsio/videoanalytics.io.svg?style=social&label=Watch"></a>
+              </li>
+            </ul>
+            <p class="lead">
+              This is still a work-in-progress and a working version isn't quite ready. Check back soon for updates or enter your email:
+            </p>
+            {% if error %}
+            <div class="alert alert-dismissible alert-warning">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              {{- error }}
+            </div>
+            {% endif %}
+            {% if confirmed %}
+            <div class="alert alert-success">
+              <strong>Your email address has been confirmed.</strong> 
+              <br/> You'll hear back from us when there's something ready to try out.
+            </div>
+            {% else %}
+            <form ng-submit="submit()">
+              <div class="form-group">
+                <div class="input-group" ng-class="{'has-warning': formError, 'has-success': formSuccess}">
+                  <input type="email" class="form-control input-lg" ng-model="email" ng-disabled="submitted" placeholder="Enter your email address&hellip;">
+                  <span class="input-group-btn">
+                    <button class="btn btn-lg btn-primary" type="submit" autofocus ng-disabled="submitted">Sign up</button>
+                  </span>
+                </div>
+                <div class="alert alert-dismissible alert-success" ng-show="formSuccess">
+                  Awesome! Please check your inbox and click the confirmation link.
+                </div>
+                <div class="alert alert-warning" ng-show="formError">
+                  {% raw %}{{errorMsg}}{% endraw %}
+                </div>
+              </div>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+    {% if googleAnalytics %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{{ googleAnalytics }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+  </body>
+</html>
